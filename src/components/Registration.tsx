@@ -12,10 +12,12 @@ function Registration() {
   const handleSubmit = () => {
     const requestOptions ={
       method: 'POST',
+      mode: 'cors',
       headers:{'accept': 'application/json','Content-Type': 'application/json'},
-      body: JSON.stringify({name: name,email:email,password:password})
+      body: JSON.stringify({name: name,email:email,password:password},
+      )
     };
-    fetch("https://api-for-missions-and-railways.herokuapp.com/users",requestOptions)
+    fetch("https://api-for-missions-and-railways.herokuapp.com/users",requestOptions,)
       .then((response)=> response.json()
       )
       .then((response) =>{
